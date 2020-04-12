@@ -10,7 +10,7 @@ public class XuLyDiem {
     public static void main(String[] args) {
         BufferedImage img = null;
         File f = null;
-        //lay anh
+        //lay anh bulldog.jpg
         try {
             f = new File("bulldog.jpg");
             img = ImageIO.read(f);
@@ -58,9 +58,9 @@ public class XuLyDiem {
 //                b = (int) (pow(b/255f,10)*255);
 
                 // Bai 5: bit plane slicing bit 7,6
-//                r = r | 0x60; // or voi 0110 0000 de bat 2 bit  7 6
-//                g = g | 0x60;
-//                b = b | 0x60;
+                r = r & 0x60; // and voi 0110 0000 de bat 2 bit  7 6
+                g = g & 0x60;
+                b = b & 0x60;
 
 
                 //gan pixel tro lai
