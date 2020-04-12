@@ -3,15 +3,14 @@ import java.io.IOException;
 import java.awt.image.BufferedImage;
 import javax.imageio.ImageIO;
 
-import static java.lang.Math.log;
-import static java.lang.Math.pow;
+import static java.lang.StrictMath.log10;
 
 public class XuLyDiem {
 
     public static void main(String[] args) {
         BufferedImage img = null;
         File f = null;
-        //read image
+        //lay anh
         try {
             f = new File("bulldog.jpg");
             img = ImageIO.read(f);
@@ -37,10 +36,15 @@ public class XuLyDiem {
 //                g = 255 - g;
 //                b = 255 - b;
 
+                //Bai2: lay nguong (vd: 170)
+//                r = r < 170 ? 0 : 255;
+//                g = g < 170 ? 0 : 255;
+//                b = b < 170 ? 0 : 255;
+
                 //Bai3: logarit
-//                r = (int) log(1+r/255f)*255;
-//                g = (int) log(1+g/255f)*255;
-//                b = (int) log(1+b/255f)*255;
+//                r = (int) (log10(1+r)*100);
+//                g = (int) (log10(1+g)*100);
+//                b = (int) (log10(1+b)*100);
 
                 //Bai4: power
                 // anh sang hon khi gamma be hon 1
@@ -54,9 +58,9 @@ public class XuLyDiem {
 //                b = (int) (pow(b/255f,10)*255);
 
                 // Bai 5: bit plane slicing bit 7,6
-                r = r | 0x60; // or voi 0110 0000 de bat 2 bit  7 6
-                g = g | 0x60;
-                b = b | 0x60;
+//                r = r | 0x60; // or voi 0110 0000 de bat 2 bit  7 6
+//                g = g | 0x60;
+//                b = b | 0x60;
 
 
                 //gan pixel tro lai
